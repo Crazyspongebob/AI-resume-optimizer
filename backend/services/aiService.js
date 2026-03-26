@@ -214,13 +214,22 @@ async function callProvider(provider, userPrompt) {
       { role: 'user', content: userPrompt },
     ],
     temperature: 0.3,
-    max_tokens: 4096,
+    max_tokens: 8192,
   });
 
-  const content = response.choices?.[0]?.message?.content;
+  const choice = response.choices?.[0];
+  const content = choice?.message?.content;
   if (!content) {
     throw new Error(`Model ${provider.model} returned no content`);
   }
+
+  // If the model stopped because it hit the token limit, the JSON will be
+  // truncated and unparseable. Treat this as a provider failure so the
+  // fallback chain can try the next provider.
+  if (choice.finish_reason === 'length') {
+    throw new Error(`Model ${provider.model} hit token limit (finish_reason=length) — response truncated`);
+  }
+
   return content;
 }
 

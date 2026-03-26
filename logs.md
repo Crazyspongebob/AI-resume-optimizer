@@ -2,6 +2,31 @@
 
 ---
 
+## 2026-03-26 — Fix: JSON truncation causing parse failure on /api/analyze
+
+### Problem
+`POST /api/analyze` returned 500: `JSON parse failed: Expected ',' or ']' after array element`.
+The log showed the `extra` array cut off mid-string at `"Springer Nature` — the JSON was genuinely truncated, not just containing bare newlines.
+
+### Root Cause
+`max_tokens: 4096` was too low. The `rewrittenResume` field alone can consume 1000–2000 tokens of Markdown. When the model hit the limit mid-JSON, it stopped generating, producing unparseable output. The previous sanitizer (char-by-char newline escaper) couldn't fix truncation — a truncated JSON has no closing `}`.
+
+### Fixes Applied
+
+**1. `backend/services/aiService.js`**
+- Raised `max_tokens` from `4096` → `8192` to accommodate long rewritten resumes.
+- Added `finish_reason === 'length'` detection: if the model was cut off by the token limit, throw immediately so the fallback chain tries the next provider instead of attempting to parse a broken response.
+
+**2. `backend/prompts/resumePrompt.js`**
+- Added explicit "Strict JSON Output Rules" block at the top of SYSTEM_PROMPT with 5 numbered rules.
+- Specifically instructs the model that `rewrittenResume` must be a **single-line JSON string** with all newlines escaped as `\n` — this is the most common source of both truncation (long content) and parse errors (bare newlines).
+- Added a 6-item pre-output self-check checklist to `buildUserPrompt` covering JSON completeness, single-line strings, and structural integrity.
+
+### Commit
+`fix: raise max_tokens to 8192, detect truncation, enforce strict JSON in prompt`
+
+---
+
 ## 2026-03-26 — Fix: pdf-parse v2 API compatibility
 
 ### Problem
