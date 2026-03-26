@@ -1,6 +1,9 @@
 'use strict';
 
-const pdfParse = require('pdf-parse');
+// pdf-parse v2 exports a class-based API: { PDFParse }
+// v1 exported a callable function directly — guard against both shapes.
+const pdfParseModule = require('pdf-parse');
+const PDFParse = pdfParseModule.PDFParse || pdfParseModule;
 
 /**
  * Extracts plain text from a PDF buffer.
@@ -10,8 +13,18 @@ const pdfParse = require('pdf-parse');
  * @returns {Promise<string>} Cleaned plain-text content of the PDF
  */
 async function extractTextFromPDF(buffer) {
-  const data = await pdfParse(buffer);
-  const raw = data.text || '';
+  let raw = '';
+
+  if (typeof PDFParse === 'function' && PDFParse.prototype && typeof PDFParse.prototype.getText === 'function') {
+    // pdf-parse v2: class-based API
+    const parser = new PDFParse({ data: buffer });
+    const result = await parser.getText();
+    raw = (result.pages || []).map(p => p.text || '').join('\n');
+  } else {
+    // pdf-parse v1: functional API — PDFParse(buffer) → { text }
+    const data = await PDFParse(buffer);
+    raw = data.text || '';
+  }
 
   // Collapse runs of 3+ blank lines into a single blank line,
   // and trim lines that are purely whitespace.
