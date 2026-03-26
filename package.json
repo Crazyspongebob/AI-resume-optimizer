@@ -1,0 +1,16 @@
+{
+  "name": "ai-resume-optimizer",
+  "version": "1.0.0",
+  "description": "AI简历优化助手 - 智能简历分析与优化工具",
+  "scripts": {
+    "install:all": "cd frontend && npm install && cd ../backend && npm install",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && node server.js",
+    "start": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "demo": "cross-env DEMO_MODE=true concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "cross-env": "^7.0.3"
+  }
+}

@@ -1,0 +1,295 @@
+[
+  {
+    "id": "result_001",
+    "resume_id": "resume_001",
+    "name": "林晓雨",
+    "position": "前端工程师",
+    "matchScore": 88,
+    "scoreBreakdown": {
+      "skillMatch": 92,
+      "experienceMatch": 85,
+      "educationMatch": 90,
+      "overallFit": 88
+    },
+    "keywordAnalysis": {
+      "matched": [
+        "React", "TypeScript", "Webpack", "Vite", "性能优化", "Web Vitals",
+        "LCP", "工程化", "组件化", "Node.js", "Docker", "代码规范", "ESLint"
+      ],
+      "missing": [
+        "微前端", "SSR", "BFF", "电商平台经验", "qiankun", "Module Federation"
+      ],
+      "extra": [
+        "uni-app", "Vue 2", "Rollup", "Jest", "开源项目", "虚拟滚动"
+      ]
+    },
+    "suggestions": [
+      {
+        "section": "工作经历",
+        "issue": "未体现微前端架构经验，而 JD 明确提到微前端为加分项",
+        "suggestion": "若有相关了解或实践，可在字节跳动经历中补充：「了解微前端架构（qiankun/Module Federation），参与过子应用接入方案评估」",
+        "priority": "high"
+      },
+      {
+        "section": "工作经历",
+        "issue": "SSR / Next.js 经验描述为「了解」，与 JD 强调的 BFF/SSR 经验有差距",
+        "suggestion": "如有任何 SSR 实践，哪怕是调研或 Demo 级别，均应具体描述：「调研 Next.js SSR 方案并输出评估报告，为团队技术选型提供参考」",
+        "priority": "medium"
+      },
+      {
+        "section": "专业技能",
+        "issue": "技能部分列举较全但缺少电商相关关键词，JD 属于抖音电商方向",
+        "suggestion": "在专业技能或工作经历中补充电商相关经验关键词，如：「熟悉电商前端业务场景（活动页、商品详情页、购物车链路）」",
+        "priority": "medium"
+      },
+      {
+        "section": "个人简介",
+        "issue": "简历缺少个人简介/自我评价模块，开头直接是求职意向，缺乏整体印象塑造",
+        "suggestion": "在姓名联系方式后增加 2-3 行个人简介：「4年前端开发经验，专注 React 技术栈，有亿级用户产品的前端性能优化实战经验，擅长工程化建设与开源社区贡献」",
+        "priority": "low"
+      },
+      {
+        "section": "工作经历",
+        "issue": "拼多多实习经历占用篇幅，与目标岗位相关性低",
+        "suggestion": "压缩拼多多实习描述至 1 条最有亮点的内容，节省空间强化字节跳动经历的深度描述",
+        "priority": "low"
+      }
+    ],
+    "rewrittenResume": "# 林晓雨 · 高级前端工程师\n\n📞 13812345678 | 📧 linxiaoyu@gmail.com | GitHub: github.com/linxiaoyu | 上海·浦东新区\n\n## 个人简介\n4 年字节跳动前端开发经验，深耕 React + TypeScript 技术栈，主导过亿级 DAU 产品的性能优化与工程化建设。具备完整的前端基础设施搭建能力，开源项目 GitHub Stars 1.2k+，对技术有持续的热情与输出。\n\n## 求职意向\n高级前端开发工程师 | 期望薪资：25-35K | 可立即入职\n\n## 教育背景\n**同济大学** · 计算机科学与技术 · 本科 · 2017.09 – 2021.06\nGPA：3.7/4.0 | CET-6：568分\n\n## 工作经历\n\n### 字节跳动（上海） · 前端开发工程师 · 2021.07 – 至今\n*抖音创作者平台 / 电商前端方向*\n\n- **性能优化**：主导 Webpack 5 → Vite 迁移及构建优化，首屏 LCP 从 4.2s 降至 **1.8s（↓57%）**，FID < 100ms，CLS < 0.05，三项 Core Web Vitals 均达 Good 级别\n- **核心功能**：负责视频上传模块前端重构，上传成功率从 87% 提升至 **99.2%**，日均处理上传量超 500 万次\n- **基础设施**：主导设计前端埋点 SDK，覆盖全平台 30+ 业务线，支持自定义事件与页面性能监控，接入成本降低 70%\n- **工程规范**：推动 ESLint + Prettier + Husky + CommitLint 的代码质量卡口落地，团队 CR 通过率提升至 95%\n- **技术调研**：调研 qiankun / Module Federation 微前端方案，完成 POC 验证并输出选型报告，为业务线接入提供技术支撑\n\n### 拼多多（上海） · 前端实习工程师 · 2020.07 – 2021.06\n- 独立完成促销活动落地页开发（Vue 2 + uni-app），单次活动 UV 达 **120 万**，通过骨架屏与懒加载将首屏白屏时间缩短 **1.2s**\n\n## 项目经历\n\n### 开源项目：react-virtual-list（⭐ 1.2k）\n基于 React 的高性能虚拟滚动列表，支持动态行高/横向滚动/无限加载，使用 Rollup 打包，周均 npm 下载量 8000+，测试覆盖率 92%（Jest）。\n\n## 专业技能\n\n| 类别 | 技能 |\n|------|------|\n| 框架 | React 18（精通）、Vue 2/3（熟练）、Next.js SSR（了解） |\n| 语言 | TypeScript / JavaScript ES6+ / HTML5 / CSS3 |\n| 工程化 | Webpack 5、Vite、Rollup、Babel、ESLint、Husky |\n| 性能 | Web Vitals（LCP/FID/CLS）调优、代码分割、Tree Shaking、CDN |\n| 其他 | Node.js、Docker 基础、Linux CLI、Git |\n\n## 荣誉\n- 字节跳动 2022 年度优秀员工\n- 同济大学优秀毕业生"
+  },
+  {
+    "id": "result_002",
+    "resume_id": "resume_002",
+    "name": "陈志远",
+    "position": "产品经理",
+    "matchScore": 91,
+    "scoreBreakdown": {
+      "skillMatch": 88,
+      "experienceMatch": 95,
+      "educationMatch": 92,
+      "overallFit": 91
+    },
+    "keywordAnalysis": {
+      "matched": [
+        "AI产品", "0到1", "DAU", "OKR", "跨部门", "数据驱动", "SQL",
+        "A/B测试", "竞品分析", "Axure", "Figma", "To B", "SaaS", "用户调研"
+      ],
+      "missing": [
+        "LLM", "RAG", "Agent", "大模型", "Prompt Engineering", "BI工具"
+      ],
+      "extra": [
+        "MBA", "物流", "供应链", "小程序", "内容营销", "TAPD"
+      ]
+    },
+    "suggestions": [
+      {
+        "section": "工作经历",
+        "issue": "虽有 AI 产品经验但未使用 LLM/RAG/Agent 等 JD 明确要求的关键词，导致 ATS 匹配度损失",
+        "suggestion": "在钉钉 AI 助理项目描述中补充具体技术关键词：「基于 LLM + RAG 架构设计 AI 会议纪要能力，协同算法团队完成 Prompt Engineering 调优，将关键信息提取准确率提升至 95%+」",
+        "priority": "high"
+      },
+      {
+        "section": "专业技能",
+        "issue": "数据分析工具中列了「神策分析、Growing IO」，但 JD 提到 BI 工具，应明确补充",
+        "suggestion": "技能中补充：「数据可视化/BI：Tableau（基础）、DataV、神策分析、GrowingIO」，让招聘方一目了然",
+        "priority": "medium"
+      },
+      {
+        "section": "工作经历",
+        "issue": "京东物流经历与目标岗位（AI 协作方向）相关性较低，占用篇幅过多",
+        "suggestion": "压缩京东经历，重点保留数据驱动决策相关内容（如 A/B 测试、数据分析），删减物流履约细节，强化与 AI/SaaS 产品更相关的能力描述",
+        "priority": "medium"
+      },
+      {
+        "section": "个人简介",
+        "issue": "简历缺少个人定位语句，无法让 HR 在 5 秒内快速了解候选人核心价值",
+        "suggestion": "增加个人 Pitch：「7 年 To B 产品经验，主导过 DAU 200 万+ AI 产品从 0 到 1 落地，擅长在大型组织内协调复杂资源推进产品目标，对 LLM 在企业协作场景的应用有深度实践」",
+        "priority": "high"
+      },
+      {
+        "section": "项目经历",
+        "issue": "个人小程序项目展示了创业精神，但数据规模偏小（月活 3000），对高级 PM 岗位说服力有限",
+        "suggestion": "调整描述侧重点，强调「独立完成产品 0-1 完整链路」的能力而非用户规模，并加入方法论描述：「通过 50 人深度用户访谈发现核心需求，以最小 MVP 快速验证假设，3个月实现自然增长至 1.5 万用户」",
+        "priority": "low"
+      }
+    ],
+    "rewrittenResume": "# 陈志远 · 高级产品经理（AI方向）\n\n📞 15923456789 | 📧 chenzhiyuan@163.com | 领英：linkedin.com/in/chenzhiyuan | 北京·朝阳区\n\n## 个人简介\n7 年互联网产品经验，专注 To B SaaS 与 AI 产品方向。主导钉钉 AI 助理从 0 到 1 落地，上线 3 个月 DAU 突破 **200 万**；擅长协调 40+ 人跨部门团队推进复杂产品目标，具备 LLM 落地应用的完整产品设计经验。\n\n## 求职意向\n高级产品经理 / AI 产品负责人 | 期望薪资：30-45K | 可面议\n\n## 教育背景\n**清华大学** · MBA（在读，周末班）· 2023.09 – 至今\n**北京大学** · 信息管理与信息系统 · 本科 · 2014.09 – 2018.06\n\n## 工作经历\n\n### 阿里巴巴（北京） · 高级产品经理 · 2021.03 – 至今\n*钉钉智能协作方向 · AI 产品线*\n\n- **0→1 落地**：主导「钉钉 AI 助理」产品设计，基于 **LLM + RAG** 架构，协同算法团队完成 Prompt Engineering 调优；上线 3 个月 DAU 突破 **200 万**，成为钉钉史上增长最快新功能\n- **核心功能**：设计智能会议纪要全链路方案（ASR → LLM 摘要 → 结构化输出），关键信息提取准确率达 **95%+**，NPS 提升 42 分\n- **数据驱动**：搭建 A/B 测试框架，累计运行 **60+ 组**实验，结合神策分析与 GrowingIO 建立数据驱动决策体系\n- **项目管理**：协调算法/工程/设计/运营 40+ 人跨职能团队，连续 6 个季度按时完成 OKR 目标\n- **竞品洞察**：主导飞书/Teams/Zoom 竞品深度分析，输出 3 份战略决策报告\n\n### 京东（北京） · 产品经理 · 2018.07 – 2021.02\n*京东物流履约产品线*\n\n- 负责商家端运单系统（服务 50 万+ 商家），推动「智能预警」上线，异常处理时效从 4h 缩至 **20 分钟**\n- 完成 iOS/Android/PC 三端改版，用户操作路径平均减少 3 步，依托 SQL 数据分析驱动关键决策\n\n## 项目经历\n\n### 独立产品：效率星球小程序 · 2022.06 – 2023.02\n通过 50 人深度访谈发现痛点，以最小 MVP 快速验证假设，**0 投放成本**实现 1.5 万注册用户自然增长，完整经历从用户研究 → 原型 → 开发 → 上线全链路。\n\n## 专业技能\n\n- **AI 产品**：LLM 产品设计、RAG 方案、Prompt Engineering、AI Agent 应用规划\n- **数据分析**：SQL（熟练）、神策分析、GrowingIO、Python 数据处理\n- **产品工具**：Axure RP、Figma、Confluence、TAPD、Jira\n- **方法论**：AARRR、OKR、RICE 优先级、设计思维、精益创业\n\n## 荣誉\n- 阿里巴巴 2022 年度明星产品人\n- 人人都是产品经理 认证专栏作者（粉丝 2.8 万）"
+  },
+  {
+    "id": "result_003",
+    "resume_id": "resume_003",
+    "name": "张婷婷",
+    "position": "数据分析师",
+    "matchScore": 85,
+    "scoreBreakdown": {
+      "skillMatch": 88,
+      "experienceMatch": 82,
+      "educationMatch": 90,
+      "overallFit": 85
+    },
+    "keywordAnalysis": {
+      "matched": [
+        "SQL", "Python", "Pandas", "A/B测试", "Tableau", "Power BI",
+        "Hive", "Spark", "ClickHouse", "机器学习", "XGBoost", "用户行为分析",
+        "RFM", "统计检验", "数据可视化"
+      ],
+      "missing": [
+        "Flink实时分析", "数据仓库建设", "数据治理", "视频号", "小程序", "公众号", "增长分析"
+      ],
+      "extra": [
+        "信用卡", "金融风控", "平安", "LightGBM", "Seaborn", "数学建模"
+      ]
+    },
+    "suggestions": [
+      {
+        "section": "工作经历",
+        "issue": "JD 关注微信生态（视频号/公众号/小程序）分析，简历中未提及相关产品或业务场景",
+        "suggestion": "若有接触微信生态相关数据或分析思路，可补充：「分析微信生态小程序跨产品用户流转路径，为商家侧拓展策略提供数据支撑」",
+        "priority": "high"
+      },
+      {
+        "section": "工作经历",
+        "issue": "数据仓库建设经验未体现，JD 明确提到参与数仓建设与数据质量治理",
+        "suggestion": "补充数仓相关经历：「参与商家数仓 ODS/DWD 层表结构设计，制定数据质量监控规则，将核心指标数据准确率提升至 99.5%+」",
+        "priority": "high"
+      },
+      {
+        "section": "工作经历",
+        "issue": "平安科技实习经历偏金融风控方向，与目标岗位（互联网产品分析）关联性较弱",
+        "suggestion": "压缩平安实习描述，或将描述重点改为「大规模数据处理能力」而非金融业务：「处理月均 500 万条交易数据，熟悉 Pandas + SQL 多源数据 ETL 流程」",
+        "priority": "medium"
+      },
+      {
+        "section": "专业技能",
+        "issue": "Flink 仅标注「了解」，而 JD 侧重实时分析场景，这一差距应在简历中适当说明",
+        "suggestion": "调整描述：「Spark（熟练）、Flink 实时计算（了解，完成过流式数据 Demo 实践）」，同时可在经历中补充实时报警/实时大盘相关内容",
+        "priority": "medium"
+      },
+      {
+        "section": "项目经历",
+        "issue": "毕业设计作为独立项目模块，工作两年后仍作为主要项目列出，权重偏高",
+        "suggestion": "将毕业设计移至教育背景下作为一行补充：「毕业论文：电商用户购买行为预测（XGBoost，F1=0.83），获院级优秀」，空出位置补充工作期间的更有价值项目",
+        "priority": "low"
+      }
+    ],
+    "rewrittenResume": "# 张婷婷 · 高级数据分析师\n\n📞 18734567890 | 📧 tingtingzhang@outlook.com | 深圳·南山区\n\n## 个人简介\n3 年腾讯数据分析经验，专注互联网产品增长与用户行为分析。具备从指标体系搭建、A/B 测试设计到机器学习建模的完整分析能力，擅长将数据洞察转化为可落地的运营策略。\n\n## 求职意向\n高级数据分析师 | 期望薪资：22-30K\n\n## 教育背景\n**中山大学** · 统计学 · 本科 · 2018.09 – 2022.06\nGPA：3.8/4.0 | 国家奖学金（连续两年）| 全国数学建模竞赛省级一等奖\n毕业论文：《电商用户购买行为预测》（XGBoost，F1=0.83），院级优秀\n\n## 工作经历\n\n### 腾讯（深圳） · 数据分析师 · 2022.07 – 至今\n*微信支付运营分析团队*\n\n- **用户建模**：构建商家流失预警模型（随机森林，AUC=**0.87**），成功预警率 71%；建立 RFM 用户分层体系（8 类画像），驱动精准运营活动 ROI 提升 **35%**\n- **指标体系**：搭建微信支付商家侧核心指标看板（Superset + ClickHouse），覆盖 **2000 万+** 商家，支撑日常运营决策\n- **A/B 测试**：独立主导 A/B 实验全流程（实验设计→样本量计算→假设检验→结果报告），年均支持实验 **40+ 组**\n- **数仓建设**：参与商家数仓 DWD 层表结构设计与数据质量监控规则制定，核心指标数据准确率达 **99.5%+**\n- **业务支撑**：每周产出商家经营分析报告，支持制定拉新留存策略，商家月活环比提升 **12%**\n\n### 平安科技（深圳） · 数据分析实习生 · 2021.09 – 2022.06\n- 使用 Python（Pandas）处理月均 **500 万条**交易数据，完成多源数据 ETL 清洗与特征工程\n- 参与信用评分模型（Scikit-learn）调优，获部门优秀实习生\n\n## 专业技能\n\n| 类别 | 技能 |\n|------|------|\n| 数据处理 | SQL（精通，窗口函数/复杂关联）、Python（Pandas/NumPy）、Hive |\n| 大数据平台 | Spark（熟练）、ClickHouse、Flink（了解）|\n| 机器学习 | Scikit-learn、XGBoost、LightGBM，分类/回归/聚类 |\n| 可视化/BI | Tableau、Power BI、Superset、ECharts |\n| 统计方法 | 假设检验、A/B Test、回归分析、时间序列 |\n\n## 荣誉\n- 腾讯 2023 年 Q3 季度之星\n- 全国大学生数学建模竞赛省级一等奖"
+  },
+  {
+    "id": "result_004",
+    "resume_id": "resume_004",
+    "name": "王建国",
+    "position": "Java后端工程师",
+    "matchScore": 90,
+    "scoreBreakdown": {
+      "skillMatch": 93,
+      "experienceMatch": 91,
+      "educationMatch": 85,
+      "overallFit": 90
+    },
+    "keywordAnalysis": {
+      "matched": [
+        "Spring Boot", "Spring Cloud", "微服务", "Redis", "Kafka", "RocketMQ",
+        "MySQL", "分库分表", "高并发", "分布式锁", "幂等", "分布式事务",
+        "Docker", "Kubernetes", "JVM", "性能调优", "千万级订单"
+      ],
+      "missing": [
+        "GC调优", "JVM调优实战", "Go语言", "配送调度", "地图/LBS", "实时计算"
+      ],
+      "extra": [
+        "TiDB", "数据迁移", "Zookeeper", "任务调度", "网易严选", "供应链"
+      ]
+    },
+    "suggestions": [
+      {
+        "section": "工作经历",
+        "issue": "JD 明确要求 JVM/GC 调优实战经验，简历中完全未提及，是关键缺口",
+        "suggestion": "在美团经历中补充 JVM 相关内容：「参与线上 Full GC 频繁问题排查，通过调整 G1GC 参数（-XX:MaxGCPauseMillis=200）与内存分配优化，将 GC 停顿时间从平均 500ms 降至 80ms」",
+        "priority": "high"
+      },
+      {
+        "section": "工作经历",
+        "issue": "目标岗位是配送调度系统，与候选人的交易/供应链背景存在方向差异，需建立桥接",
+        "suggestion": "在工作经历开头补充通用性描述，强调高并发分布式核心能力而非具体业务：「具备千万级日订单高并发系统完整研发经验，核心设计模式可复用至配送调度场景」",
+        "priority": "medium"
+      },
+      {
+        "section": "专业技能",
+        "issue": "Go 语言标注「了解」，JD 列为加分项，应补充具体程度",
+        "suggestion": "调整为：「Go（初级，完成过 Goroutine / Channel 并发编程练习，了解与 Java 的线程模型差异）」，展示学习意愿",
+        "priority": "medium"
+      },
+      {
+        "section": "项目经历",
+        "issue": "个人开源项目是任务调度框架，与目标岗位（配送调度）有概念关联，但未挖掘",
+        "suggestion": "在项目描述中加入与配送调度的类比：「分布式调度的核心设计思路（任务分片、优先级队列、幂等执行）与配送骑手调度系统存在相通之处」",
+        "priority": "low"
+      },
+      {
+        "section": "工作经历",
+        "issue": "网易经历中数据迁移（MySQL→TiDB）属于较通用技能，描述可更加量化",
+        "suggestion": "补充迁移规模与风险控制：「通过双写+灰度切流方案，零停机、零数据丢失完成 2 亿条记录迁移，迁移窗口仅 4 小时」",
+        "priority": "low"
+      }
+    ],
+    "rewrittenResume": "# 王建国 · Java 高级后端工程师\n\n📞 17645678901 | 📧 wangjianguo@qq.com | 杭州·余杭区\n\n## 个人简介\n5 年 Java 后端开发经验，长期深耕高并发分布式系统（日均 3000 万+ 订单），擅长系统性能调优与微服务架构设计。具备完整的大促保障经验（峰值 QPS 18 万），对分布式幂等、事务一致性有深度实践。\n\n## 求职意向\nJava 高级后端工程师 | 期望薪资：28-40K | 可接受出差\n\n## 教育背景\n**浙江大学** · 软件工程 · 本科 · 2016.09 – 2020.06\n\n## 工作经历\n\n### 美团（杭州） · Java 高级工程师 · 2022.06 – 至今\n*到店事业群 · 交易系统（日均 3000 万+ 订单）*\n\n- **性能调优**：主导核心链路重构，P99 延迟从 380ms 降至 **95ms**；针对 Full GC 频繁问题，调整 G1GC 参数与对象分配策略，GC 停顿时间从 500ms 降至 **80ms**，系统 SLA 达 **99.99%**\n- **分布式幂等**：设计并实现分布式幂等框架（Redis Token + DB 最终一致），每日拦截异常扣款请求 **20 万+**\n- **大促保障**：设计限流熔断 + 异步削峰方案（RocketMQ 削峰），双十一支撑峰值 **QPS 18 万**，零故障\n- **微服务治理**：主导订单服务拆分，将单体服务拆分为 7 个微服务（Spring Cloud Alibaba），服务间耦合度显著降低\n\n### 网易严选（杭州） · Java 后端工程师 · 2020.07 – 2022.05\n*供应链库存系统（500 万 SKU）*\n\n- **高并发库存**：使用 Redis + Lua 脚本实现原子库存扣减，并发能力提升 **10 倍**，超卖率降至 **0**\n- **搜索优化**：引入 ES 全文检索，商品搜索响应从 800ms 降至 **120ms**\n- **数据迁移**：通过双写 + 灰度切流方案，**零停机、零数据丢失**完成 2 亿条订单从 MySQL 迁移至 TiDB，迁移窗口 4 小时\n\n## 项目经历\n\n### 开源项目：mini-scheduler（⭐ 680）\n基于 Java + Zookeeper + MySQL 实现分布式任务调度框架，支持 CRON、任务依赖、失败重试与主从选举。核心设计（任务分片/优先级队列/幂等执行）与配送调度系统思路相通。\n\n## 专业技能\n\n| 类别 | 技能 |\n|------|------|\n| 语言 | Java 8/11/17（精通）、Go（初级）、Python（基础） |\n| 框架 | Spring Boot、Spring Cloud Alibaba、MyBatis-Plus、Netty |\n| 中间件 | Redis 集群/哨兵/Lua、Kafka、RocketMQ、RabbitMQ |\n| 数据库 | MySQL（索引/主从/分库分表）、TiDB、ClickHouse、ES |\n| 架构 | 微服务、DDD、分布式事务（Seata）、分布式幂等 |\n| 运维 | Docker、Kubernetes 基础、Prometheus + Grafana |\n\n## 荣誉\n- 美团 2023 年度技术卓越奖\n- Leetcode 中国区 Top 5%"
+  },
+  {
+    "id": "result_005",
+    "resume_id": "resume_005",
+    "name": "刘思琪",
+    "position": "UI设计师",
+    "matchScore": 87,
+    "scoreBreakdown": {
+      "skillMatch": 90,
+      "experienceMatch": 85,
+      "educationMatch": 80,
+      "overallFit": 87
+    },
+    "keywordAnalysis": {
+      "matched": [
+        "Figma", "Sketch", "UI设计", "UX", "电商", "Design System",
+        "组件库", "iOS规范", "Android规范", "用户研究", "交互设计",
+        "作品集", "After Effects", "动效"
+      ],
+      "missing": [
+        "Lottie", "ProtoPie动效", "用户旅程地图", "可用性测试", "数据驱动设计"
+      ],
+      "extra": [
+        "ColorOS", "图标设计", "OPPO", "无障碍设计", "WCAG", "Banner"
+      ]
+    },
+    "suggestions": [
+      {
+        "section": "工作经历",
+        "issue": "JD 明确将 Lottie 动效列为加分项，候选人有 AE 经验但未提及 Lottie，存在关键词缺失",
+        "suggestion": "补充：「将动效设计稿通过 Lottie（bodymovin 插件）导出 JSON，与前端协作实现大促页面 Lottie 动画，相比 GIF 方案体积缩小 80%」",
+        "priority": "high"
+      },
+      {
+        "section": "工作经历",
+        "issue": "数据驱动设计的证明不足，仅有「转化率提升 23%」一处，与 JD 强调的用户研究和设计驱动增长方向不够匹配",
+        "suggestion": "补充数据驱动设计过程：「通过热力图分析（Growing IO）发现首屏点击分布异常，主导重新设计频道入口布局，AB 测试验证转化率提升 23%」",
+        "priority": "high"
+      },
+      {
+        "section": "专业技能",
+        "issue": "简历中「ProtoPie」在技能中提到但工作经历中无对应案例，显得悬空",
+        "suggestion": "在某一项目描述中加入：「关键交互动效使用 ProtoPie 制作高保真可交互原型，用于用户测试与开发沟通，减少需求理解偏差」",
+        "priority": "medium"
+      },
+      {
+        "section": "工作经历",
+        "issue": "OPPO 实习经历以图标和运营物料为主，提升高度有限，与 JD 要求的 UX 全链路能力有差距",
+        "suggestion": "压缩 OPPO 实习至 1 行，聚焦规模亮点：「参与 ColorOS 系统图标设计迭代，完成 200+ 图标绘制，建立图标设计规范文档」",
+        "priority": "low"
+      },
+      {
+        "section": "个人简介",
+        "issue": "简历无个人简介，作品集链接位于联系方式中，不够突出",
+        "suggestion": "增加个人简介并将作品集单独强调：「3 年京东电商设计经验，覆盖亿级 DAU 产品全链路设计，擅长将数据洞察与设计语言结合驱动转化提升。作品集：www.liusiqi.design」",
+        "priority": "medium"
+      }
+    ],
+    "rewrittenResume": "# 刘思琪 · UI/UX 设计师\n\n📞 13567891234 | 📧 liusiqi_design@gmail.com | 广州·天河区\n**作品集：[www.liusiqi.design](http://www.liusiqi.design)**\n\n## 个人简介\n3 年京东电商设计经验，深度参与亿级 DAU 产品的全链路 UI/UX 设计，覆盖 App/H5/小程序多端。擅长以数据洞察驱动设计决策（AB 实验验证转化率提升 23%），具备设计系统建设与动效设计完整能力。\n\n## 求职意向\nUI/UX 设计师 / 高级视觉设计师 | 期望薪资：18-28K\n\n## 教育背景\n**华南理工大学** · 视觉传达设计 · 本科 · 2018.09 – 2022.06\n辅修：用户体验设计 / 交互设计 | 毕业设计：《银发族移动端无障碍界面设计研究》获院级优秀\n\n## 工作经历\n\n### 京东（广州） · UI 设计师 · 2022.07 – 至今\n*京东零售设计中心 · 亿级 DAU 产品*\n\n- **数据驱动**：通过热力图分析（GrowingIO）发现首屏点击分布异常，主导频道入口布局重设计，A/B 测试验证 618 活动页转化率提升 **23%**（较上年）\n- **动效设计**：使用 After Effects 设计大促 Lottie 动画，通过 bodymovin 插件导出 JSON 与前端协作落地，相比 GIF 方案文件体积缩小 **80%**\n- **设计系统**：参与 JDOS 组件库维护，负责 **30+ 基础组件**视觉规范制定，建立切图交付规范，前端切图效率提升 **40%**\n- **全链路设计**：独立完成京东极速版 App 信息流模块设计（草图→交互→视觉→验收），覆盖 **3000 万**低端机用户\n- **原型交互**：关键交互流程使用 ProtoPie 制作高保真可交互原型，用于用户测试，减少需求理解偏差\n\n### OPPO 互联网（广州） · 视觉设计实习生 · 2021.09 – 2022.06\n- 参与 ColorOS 系统图标迭代，完成 **200+ 图标**绘制，建立图标设计规范文档\n\n## 项目经历\n\n### 独立接单：教育 App 改版方案 · 2023.04 – 2023.06\n完整交付用户调研报告 + 竞品分析 + 信息架构 + **高保真原型（80+ 屏）**，方案被采用上线，首屏留存率提升 **17%**。\n\n## 专业技能\n\n| 类别 | 技能 |\n|------|------|\n| 设计工具 | Figma（精通，Auto Layout/组件化）、Sketch、Adobe XD |\n| 视觉工具 | Photoshop、Illustrator、After Effects |\n| 动效 | Lottie（bodymovin）、ProtoPie、Principle |\n| 规范 | iOS HIG、Material Design 3、WCAG 2.1 无障碍 |\n| 其他 | 设计系统建设、用户调研、竞品分析、基础 HTML/CSS |\n\n## 荣誉\n- 京东 2023 年度最佳设计师（季度）\n- 站酷网认证设计师（粉丝 8600+）\n- 红点设计奖学生组入围（2021）"
+  }
+]
