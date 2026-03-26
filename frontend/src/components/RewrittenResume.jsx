@@ -61,19 +61,29 @@ export default function RewrittenResume({ content = '' }) {
   };
 
   const handlePrint = () => {
-    // Populate the hidden print area then trigger print
-    const printArea = document.getElementById('resume-print-area');
-    if (printArea && contentRef.current) {
-      printArea.innerHTML = contentRef.current.innerHTML;
-    }
-    window.print();
+    const inner = contentRef.current?.innerHTML ?? '';
+    const html = `<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI 优化简历</title>
+  <style>
+    ${RESUME_STYLES}
+    @media print { @page { margin: 2cm; } }
+  </style>
+</head>
+<body>${inner}</body>
+</html>`;
+    const win = window.open('', '_blank');
+    if (!win) return;
+    win.document.write(html);
+    win.document.close();
+    win.focus();
+    win.onload = () => { win.print(); win.close(); };
   };
 
   return (
     <>
-      {/* Hidden area used only during browser print / Save as PDF */}
-      <div id="resume-print-area" style={{ display: 'none' }} className="resume-prose" />
-
       <div className="animate-fade-in">
         {/* Toolbar */}
         <div className="flex items-start justify-between gap-4 mb-6">
