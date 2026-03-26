@@ -155,22 +155,47 @@ function extractJSON(text) {
 
   const jsonString = candidate.slice(start, end + 1);
 
-  try {
-    return JSON.parse(jsonString);
-  } catch (parseErr) {
-    // 第一次尝试: 替换字符串值中的非转义控制字符（常见于AI生成的Markdown内容）
-    try {
-      const sanitized = jsonString.replace(
-        /("(?:[^"\\]|\\.)*")/g,
-        (match) => match
-          .replace(/\n/g, '\\n')
-          .replace(/\r/g, '\\r')
-          .replace(/\t/g, '\\t')
-      );
-      return JSON.parse(sanitized);
-    } catch {
-      throw new Error(`JSON parse failed: ${parseErr.message}. Extracted string (first 500 chars): ${jsonString.slice(0, 500)}`);
+  // Pre-sanitize: escape bare control characters (newline, CR, tab) that appear
+  // inside JSON string values. The AI often inserts literal newlines inside strings,
+  // which JSON.parse rejects. We scan character-by-character, tracking whether we
+  // are inside a quoted string, and escape any bare control characters we encounter.
+  function sanitizeControlChars(s) {
+    let result = '';
+    let inString = false;
+    let i = 0;
+    while (i < s.length) {
+      const ch = s[i];
+      if (inString) {
+        if (ch === '\\') {
+          // Escaped sequence — copy both chars verbatim
+          result += ch + (s[i + 1] || '');
+          i += 2;
+          continue;
+        } else if (ch === '"') {
+          inString = false;
+          result += ch;
+        } else if (ch === '\n') {
+          result += '\\n';
+        } else if (ch === '\r') {
+          result += '\\r';
+        } else if (ch === '\t') {
+          result += '\\t';
+        } else {
+          result += ch;
+        }
+      } else {
+        if (ch === '"') inString = true;
+        result += ch;
+      }
+      i++;
     }
+    return result;
+  }
+
+  try {
+    return JSON.parse(sanitizeControlChars(jsonString));
+  } catch (parseErr) {
+    throw new Error(`JSON parse failed: ${parseErr.message}. Extracted string (first 500 chars): ${jsonString.slice(0, 500)}`);
   }
 }
 
