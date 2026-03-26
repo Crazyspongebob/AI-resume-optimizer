@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "THOUGHTS_AND_ACTIONS_20260326.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "THOUGHTS_AND_ACTIONS_20260326"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "THOUGHTS_AND_ACTIONS_20260326.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "README 的反向链接列表"
+              "title": "THOUGHTS_AND_ACTIONS_20260326 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "THOUGHTS_AND_ACTIONS_20260326.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "README 的出链列表"
+              "title": "THOUGHTS_AND_ACTIONS_20260326 的出链列表"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
+                "file": "THOUGHTS_AND_ACTIONS_20260326.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "README 的大纲"
+              "title": "THOUGHTS_AND_ACTIONS_20260326 的大纲"
             }
           }
         ]
@@ -185,18 +185,35 @@
   },
   "active": "c9f37355b61713e0",
   "lastOpenFiles": [
-    "frontend/dist/assets/index-Cegf4RtT.js",
-    "frontend/dist/assets/index-CRzQv9o_.css",
-    "frontend/vite.config.js.timestamp-1774523294145-5ded9892d4f3f.mjs",
+    "node_modules/date-fns/esm/yearsToQuarters/index.js",
+    "node_modules/date-fns/esm/yearsToQuarters/package.json",
+    "node_modules/date-fns/esm/yearsToQuarters/index.js.flow",
+    "node_modules/date-fns/esm/yearsToQuarters/index.d.ts",
+    "node_modules/date-fns/esm/yearsToQuarters",
+    "node_modules/date-fns/esm/yearsToMonths/index.js.flow",
+    "node_modules/date-fns/esm/yearsToMonths/package.json",
+    "node_modules/date-fns/esm/yearsToMonths/index.d.ts",
+    "node_modules/date-fns/esm/yearsToMonths/index.js",
+    "node_modules/date-fns/esm/yearsToMonths",
+    "node_modules/date-fns/esm/toDate/package.json",
+    "frontend/node_modules/yallist/README.md",
+    "frontend/node_modules/lru-cache/README.md",
+    "frontend/node_modules/debug/README.md",
+    "frontend/node_modules/gensync/README.md",
+    "frontend/node_modules/baseline-browser-mapping/README.md",
+    "frontend/node_modules/browserslist/README.md",
+    "frontend/node_modules/run-parallel/README.md",
+    "frontend/node_modules/cssesc/README.md",
+    "frontend/node_modules/@alloc/quick-lru/readme.md",
+    "frontend/node_modules/@vitejs/plugin-react/README.md",
+    "frontend/node_modules/esbuild/README.md",
+    "frontend/node_modules/esbuild/LICENSE.md",
+    "README.md",
+    "logs.md",
     "DEVELOPMENT_METHODOLOGY.md",
-    "backend/services/pdfService.js",
-    "backend/node_modules/pdfjs-dist/standard_fonts/LiberationSans-Italic.ttf",
-    "backend/node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs.map",
-    "backend/node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs",
-    "backend/node_modules/pdfjs-dist/legacy/build/pdf.worker.min.mjs",
-    "backend/node_modules/pdfjs-dist/legacy/build/pdf.sandbox.mjs.map",
-    "backend/node_modules/pdfjs-dist/legacy/build/pdf.sandbox.mjs",
-    "backend/node_modules/pdfjs-dist/legacy/build/pdf.sandbox.min.mjs",
+    "DEMO_SCRIPT.md",
+    "BENCHMARK_RESULTS.md",
+    "Claude Code SubAgent Prompt.md",
     "backend/node_modules/@napi-rs/canvas-win32-x64-msvc/README.md",
     "backend/node_modules/@napi-rs/canvas/README.md",
     "backend/node_modules/multer/README.md",
@@ -206,23 +223,6 @@
     "backend/node_modules/pdfjs-dist/web/images/loading-icon.gif",
     "backend/node_modules/string_decoder/README.md",
     "backend/node_modules/concat-stream/readme.md",
-    "backend/node_modules/readable-stream/README.md",
-    "backend/node_modules/readable-stream/GOVERNANCE.md",
-    "backend/node_modules/readable-stream/CONTRIBUTING.md",
-    "frontend/node_modules/ts-interface-checker/README.md",
-    "frontend/node_modules/trough/readme.md",
-    "frontend/node_modules/tinyglobby/node_modules/picomatch/README.md",
-    "frontend/node_modules/tinyglobby/node_modules/fdir/README.md",
-    "frontend/node_modules/tinyglobby/README.md",
-    "frontend/node_modules/thenify/README.md",
-    "frontend/node_modules/thenify/History.md",
-    "frontend/node_modules/source-map-js/README.md",
-    "frontend/node_modules/react/README.md",
-    "frontend/node_modules/react-router-dom/README.md",
-    "frontend/node_modules/queue-microtask/README.md",
-    "frontend/node_modules/postcss-js/README.md",
-    "frontend/node_modules/parse-entities/node_modules/@types/unist/README.md",
-    "frontend/node_modules/parse-entities/readme.md",
     "Resume-results3.png",
     "Resume-results2.png",
     "Resume-results1.png",
