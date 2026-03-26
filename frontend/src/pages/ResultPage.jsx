@@ -6,6 +6,7 @@ import ScoreGauge from '../components/ScoreGauge';
 import SuggestionList from '../components/SuggestionList';
 import KeywordAnalysis from '../components/KeywordAnalysis';
 import RewrittenResume from '../components/RewrittenResume';
+import { downloadReportHTML } from '../utils/exportReport';
 
 function getScoreConfig(score) {
   if (score >= 85) return { label: '非常匹配', color: '#10b981', dimColor: '#d1fae5', textOnDark: 'text-emerald-300' };
@@ -130,7 +131,7 @@ export default function ResultPage() {
         </div>
 
         {/* Bottom actions */}
-        <div className="mt-6 flex items-center justify-center gap-3 pb-14">
+        <div className="mt-6 flex items-center justify-center gap-3 pb-14 flex-wrap">
           <button
             onClick={() => navigate('/input')}
             className="btn-secondary flex items-center gap-2 text-sm"
@@ -139,6 +140,15 @@ export default function ResultPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
             </svg>
             重新分析
+          </button>
+          <button
+            onClick={() => downloadReportHTML(result, inputData)}
+            className="btn-secondary flex items-center gap-2 text-sm border-indigo-200 text-indigo-700 hover:bg-indigo-50"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            导出完整报告
           </button>
           <button
             onClick={() => navigate('/')}
