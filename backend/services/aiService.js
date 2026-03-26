@@ -248,6 +248,10 @@ async function analyzeResume(resume, jobDescription) {
   if (!parsed.scoreBreakdown || !parsed.keywordAnalysis || !Array.isArray(parsed.suggestions)) {
     throw new Error('AI response is missing required top-level fields');
   }
+  if (parsed.suggestions.length === 0) {
+    // Zero suggestions is technically valid for a near-perfect resume; allow it.
+    console.warn('[aiService] AI returned 0 suggestions — resume may be an excellent match.');
+  }
 
   return parsed;
 }

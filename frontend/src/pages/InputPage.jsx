@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAnalysisContext } from '../AnalysisContext';
 import useAnalysis from '../hooks/useAnalysis';
@@ -14,6 +14,34 @@ export default function InputPage() {
   const [resume, setResume] = useState('');
   const [jobDescription, setJobDescription] = useState('');
   const [errors, setErrors] = useState({});
+  const [pdfStatus, setPdfStatus] = useState(null); // null | 'uploading' | 'done' | 'error'
+  const pdfInputRef = useRef(null);
+
+  const handlePdfUpload = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    // Reset input so the same file can be re-selected
+    e.target.value = '';
+
+    setPdfStatus('uploading');
+    setErrors(prev => ({ ...prev, resume: '' }));
+
+    const formData = new FormData();
+    formData.append('pdf', file);
+
+    try {
+      const res = await fetch('/api/parse-pdf', { method: 'POST', body: formData });
+      const json = await res.json();
+      if (!res.ok || !json.success) throw new Error(json.error || '解析失败');
+      setResume(json.text);
+      setPdfStatus('done');
+      setTimeout(() => setPdfStatus(null), 3000);
+    } catch (err) {
+      setPdfStatus('error');
+      setErrors(prev => ({ ...prev, resume: `PDF 解析失败：${err.message}` }));
+      setTimeout(() => setPdfStatus(null), 4000);
+    }
+  };
 
   const handleDemo = () => {
     setResume(DEMO_RESUME);
@@ -65,11 +93,59 @@ export default function InputPage() {
               <div className="flex items-center justify-between mb-3">
                 <label className="text-base font-semibold text-gray-800" htmlFor="resume">
                   简历内容
-                  <span className="ml-2 text-xs font-normal text-gray-400">（纯文本格式）</span>
+                  <span className="ml-2 text-xs font-normal text-gray-400">（纯文本 / PDF）</span>
                 </label>
-                {resume && (
-                  <span className="text-xs text-gray-400">{resume.length} 字符</span>
-                )}
+                <div className="flex items-center gap-2">
+                  {resume && (
+                    <span className="text-xs text-gray-400">{resume.length} 字符</span>
+                  )}
+                  {/* Hidden file input */}
+                  <input
+                    ref={pdfInputRef}
+                    type="file"
+                    accept=".pdf,application/pdf"
+                    className="hidden"
+                    onChange={handlePdfUpload}
+                  />
+                  <button
+                    type="button"
+                    disabled={pdfStatus === 'uploading'}
+                    onClick={() => pdfInputRef.current?.click()}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border transition-all duration-200 ${
+                      pdfStatus === 'done'
+                        ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                        : pdfStatus === 'error'
+                        ? 'bg-red-50 text-red-600 border-red-200'
+                        : pdfStatus === 'uploading'
+                        ? 'bg-blue-50 text-blue-500 border-blue-200 cursor-wait'
+                        : 'bg-white text-gray-600 border-gray-200 hover:border-primary-300 hover:text-primary-600'
+                    }`}
+                  >
+                    {pdfStatus === 'uploading' ? (
+                      <>
+                        <svg className="w-3.5 h-3.5 animate-spin" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                        </svg>
+                        解析中…
+                      </>
+                    ) : pdfStatus === 'done' ? (
+                      <>
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                        解析成功
+                      </>
+                    ) : (
+                      <>
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                        </svg>
+                        上传 PDF
+                      </>
+                    )}
+                  </button>
+                </div>
               </div>
               <textarea
                 id="resume"

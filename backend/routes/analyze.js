@@ -1,7 +1,22 @@
 'use strict';
 
 const express = require('express');
+const multer = require('multer');
 const { analyzeResume } = require('../services/aiService');
+const { extractTextFromPDF } = require('../services/pdfService');
+
+// Multer: memory storage, 10 MB file size limit, PDF only
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 10 * 1024 * 1024 },
+  fileFilter(_req, file, cb) {
+    if (file.mimetype === 'application/pdf') {
+      cb(null, true);
+    } else {
+      cb(new Error('只支持 PDF 格式文件'));
+    }
+  },
+});
 
 const router = express.Router();
 
@@ -82,6 +97,25 @@ router.post('/analyze', async (req, res, next) => {
     const data = await analyzeResume(resume, jobDescription);
 
     return res.json({ success: true, data });
+  } catch (err) {
+    return next(err);
+  }
+});
+
+// ---------------------------------------------------------------------------
+// POST /api/parse-pdf  — extract text from uploaded PDF resume
+// ---------------------------------------------------------------------------
+router.post('/parse-pdf', upload.single('pdf'), async (req, res, next) => {
+  try {
+    if (!req.file) {
+      const err = new Error('请上传 PDF 文件（字段名：pdf）');
+      err.status = 400;
+      return next(err);
+    }
+    console.log(`[POST /parse-pdf] filename=${req.file.originalname} size=${req.file.size}`);
+    const text = await extractTextFromPDF(req.file.buffer);
+    console.log(`[POST /parse-pdf] extracted ${text.length} chars`);
+    return res.json({ success: true, text });
   } catch (err) {
     return next(err);
   }
