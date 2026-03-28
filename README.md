@@ -155,3 +155,9 @@ ai-resume-optimizer/
 | 后端 | Node.js, Express 4 |
 | AI 接入 | OpenAI 兼容 SDK，支持多供应商 fallback |
 | PDF 解析 | pdf-parse |
+
+---
+
+## 📄 License
+
+MIT — feel free to fork and adapt for your own interview practice tools.
